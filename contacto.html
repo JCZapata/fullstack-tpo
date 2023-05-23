@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        *{font-family: Verdana;}
+    </style>
+</head>
+<body>
+    <form id="ContactForm" action="" method="get">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        
+        <button type="submit">Enviar</button>
+      </form>
+      
+      <script>
+      var formulario = document.getElementById("ContactForm");
+      
+      formulario.addEventListener("submit", function(event) {
+        if (formulario.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        formulario.classList.add("was-validated");
+      });
+      </script>
+</body>
+<footer class="footer">
+    <div class="container">
+      
+      <div class="info">
+        <h3>Información de la empresa</h3>
+        <p>Somos una empresa dedicada a la producción y distribución de alimento para perros de alta calidad y con ingredientes naturales.</p>
+        <p>Contamos con una amplia variedad de productos para satisfacer las necesidades nutricionales de tu mascota.</p>
+      </div>
+      <div class="contact">
+        <h3>Contacto</h3>
+        <p>Dirección: Calle Falsa 123, Ciudad Falsa, País Falso</p>
+        <p>Teléfono: +00 0000 0000</p>
+        <p>Email: contacto@example.com</p>
+      </div>
+      <div class="social">
+        <h3>Redes sociales</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook-f"></i>Facebook</a></li>
+          <li><a href="#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>
