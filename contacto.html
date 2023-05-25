@@ -4,27 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleContact.css">
     <style>
         *{font-family: Verdana;}
     </style>
 </head>
 <body>
-    <form id="ContactForm" action="" method="get">
+  <header>
+    <div class="logo">
+      <img src="images/dog-logo.jpg" alt="Logo de la empresa">
+    </div>
+    <nav class="nav-bar">
+      <div class="index">
+          <a href="Index.html">Inicio</a>
+          </div>
+          <div class="quienesSomos">
+              <a href="quienes.html">Quienes somos</a>
+          </div>
+          <div class="Productos">
+            <a href="productos.html">Productos</a>
+        </div>
+    </nav>
+    <h1>CONTACTO</h1>
+    <p>Te invitamos a comunicarte con nosotros</p>
+    </header>
+    <form id="ContactForm" action="" method="get" class="container">
+      <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
-        
-        <button type="submit">Enviar</button>
-      </form>
+        <input type="text" id="nombre" name="nombre" required class="form-control">
+      </div>
       
-      <script>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required class="form-control"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    
+    <script>
       var formulario = document.getElementById("ContactForm");
       
       formulario.addEventListener("submit", function(event) {
@@ -34,30 +59,6 @@
         }
         formulario.classList.add("was-validated");
       });
-      </script>
+    </script>
 </body>
-<footer class="footer">
-    <div class="container">
-      
-      <div class="info">
-        <h3>Información de la empresa</h3>
-        <p>Somos una empresa dedicada a la producción y distribución de alimento para perros de alta calidad y con ingredientes naturales.</p>
-        <p>Contamos con una amplia variedad de productos para satisfacer las necesidades nutricionales de tu mascota.</p>
-      </div>
-      <div class="contact">
-        <h3>Contacto</h3>
-        <p>Dirección: Calle Falsa 123, Ciudad Falsa, País Falso</p>
-        <p>Teléfono: +00 0000 0000</p>
-        <p>Email: contacto@example.com</p>
-      </div>
-      <div class="social">
-        <h3>Redes sociales</h3>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook-f"></i>Facebook</a></li>
-          <li><a href="#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
 </html>

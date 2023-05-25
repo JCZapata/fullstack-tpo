@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styleQuienes.css">
+  <script>
+    function getDogImage() {
+      var xhr = new XMLHttpRequest();
+      var url = 'https://dog.ceo/api/breeds/image/random';
+      
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            var imageUrl = response.message;
+            
+            // mostamos la imagen
+            var image = document.createElement('img');
+            image.src = imageUrl;
+            document.getElementById('dogImage').appendChild(image);
+          } else {
+            console.log('Error: ' + xhr.status);
+          }
+        }
+      };
+      
+      xhr.open('GET', url, true);
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="index">
+                <a href="Index.html">Inicio</a>
+                </div>
+                <div class="Productos">
+                    <a href="productos.html">Productos</a>
+                </div>
+                <div class="contacto">
+                    <a href="contacto.html">Contacto</a>
+                </div>
+        </nav>
+    </header>
+  <div class="container">
+    <h1>Quienes Somos</h1>
+    <p>Somos una tienda de artículos para perros apasionada por brindar productos de calidad y servicios excepcionales a los dueños de mascotas. Nuestra misión es satisfacer las necesidades de cada perro, ofreciendo una amplia variedad de productos que promuevan su bienestar y felicidad.</p>
+    <p>En nuestra tienda, encontrarás todo lo que necesitas para consentir a tu fiel compañero. Desde alimentos nutritivos y saludables hasta juguetes divertidos y cómodas camas, nos aseguramos de tener todo lo necesario para cubrir las necesidades específicas de cada perro, sin importar su raza, tamaño o edad.</p>
+    <p>Trabajamos con los principales fabricantes y proveedores de artículos para perros, seleccionando cuidadosamente cada producto para garantizar su calidad y seguridad. Nos enfocamos en ofrecer opciones que promuevan el cuidado responsable de las mascotas, priorizando ingredientes naturales, materiales duraderos y diseños ergonómicos.</p>
+
+    <h2>Conoce Mas Perros:</h2>
+    <div id="dogImage"></div>
+    
+    <button onclick="getDogImage()">Mostrar otro Perrito</button>
+
+  </div>
+</body>
+</html>
